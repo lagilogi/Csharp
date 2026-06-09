@@ -1,0 +1,14 @@
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\bin\Debug\net10.0\console-calculator.exe
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\bin\Debug\net10.0\console-calculator.deps.json
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\bin\Debug\net10.0\console-calculator.runtimeconfig.json
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\bin\Debug\net10.0\console-calculator.dll
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\bin\Debug\net10.0\console-calculator.pdb
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.AssemblyInfoInputs.cache
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.AssemblyInfo.cs
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.csproj.CoreCompileInputs.cache
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.dll
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\refint\console-calculator.dll
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.pdb
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\console-calculator.genruntimeconfig.cache
+C:\Users\woute\Documents\Projects\Csharp\Phase-1-learn-c#-properly\console-calculator\obj\Debug\net10.0\ref\console-calculator.dll
