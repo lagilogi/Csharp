@@ -28,9 +28,8 @@ which is the foundation of almost every application you'll ever build.
 - What's the difference between == and =?
 - When should logic go into a method?
 - How do you prevent crashes from bad user input?
-- Stretch Goal
 
-### Refactor calculation logic into separate methods:
+### Stretch Goal - Refactor calculation logic into separate methods:
 
 - Add()
 - Subtract()
@@ -66,11 +65,13 @@ CRUD means:
 
 Example Class
 
+```csharp
 class TodoItem
 {
     public string Title { get; set; }
     public bool IsCompleted { get; set; }
 }
+```
 
 ### What to Focus On and understand
 
@@ -78,7 +79,7 @@ class TodoItem
 - Why use a class instead of multiple variables?
 - Why is a List useful?
 
-Stretch Goal
+### Stretch Goal
 
 - Save tasks to a file.
 
@@ -118,16 +119,18 @@ Downloads/
 
 and:
 
+```csharp
 try
 {
 }
 catch
 {
 }
+```
 
 This is where exceptions become practical.
 
-Stretch Goal
+### Stretch Goal
 
 - Create folders automatically.
 
@@ -145,12 +148,14 @@ Learn object-oriented programming properly. This is where C# starts feeling like
 
 Example Class
 
+```csharp
 class Product
 {
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Quantity { get; set; }
 }
+```
 
 ### What to Focus On and Understand
 
@@ -158,7 +163,7 @@ class Product
 - How instances work
 - Why objects represent real-world concepts
 
-Stretch Goal
+### Stretch Goal
 
 - Search products by name.
 
@@ -176,6 +181,7 @@ Learn how modern applications communicate over the internet. This is your bridge
 
 Example Flow
 
+```csharp
 User enters city
 ↓
 Call weather API
@@ -185,6 +191,7 @@ Receive JSON
 Convert JSON to C# objects
 ↓
 Display weather
+```
 
 ### What to Focus On and Learn
 
@@ -194,7 +201,7 @@ Display weather
 
 These are essential skills for ASP.NET and MAUI later.
 
-Stretch Goal
+### Stretch Goal
 
 - Display a 5-day forecast.
 
@@ -214,12 +221,14 @@ Combine everything learned so far. This should feel noticeably easier than Proje
 
 Example Class
 
+```csharp
 class Expense
 {
     public string Category { get; set; }
     public decimal Amount { get; set; }
     public DateTime Date { get; set; }
 }
+```
 
 Features
 
