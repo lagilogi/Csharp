@@ -1,0 +1,29 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio / Rider / VS Code files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output folders (legacy / extra safety)
+[Bb]in/
+[Oo]bj/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet packages (only if you use packages folder restore)
+*.nupkg
+packages/
+
+# Publish output
+publish/
