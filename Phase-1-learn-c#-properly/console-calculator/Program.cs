@@ -1,49 +1,94 @@
-﻿try
-{
-  Console.WriteLine("Welcome to the calculater");
-  Console.Write("Num 1: ");
-  string input1 = Console.ReadLine();
-  double num1 = Convert.ToDouble(input1);
-  Console.Write("Num 2:");
-  string input2 = Console.ReadLine();
-  double num2 = Convert.ToDouble(input2);
+﻿using System.Globalization;
+
+CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
+string GetOperator() {
   string calcOperator;
 
-  do
-  {
+  while (true) {
     Console.WriteLine("\nWhat action would you like to take?");
     Console.WriteLine("- For adding enter '+'");
     Console.WriteLine("- For substracting enter '-'");
     Console.WriteLine("- For multiplying enter '*'");
-    Console.WriteLine("- For dividing enter '/'");
+    Console.WriteLine("- For dividing enter '/'\n");
+
     Console.Write("Operator: ");
-    calcOperator = Console.ReadLine();
-    if (calcOperator.Length == 1 && (
-        calcOperator == "+" ||
-        calcOperator == "-" ||
-        calcOperator == "*" ||
-        calcOperator == "/"))
-      break;
-    Console.WriteLine("\nInvalid operator");
-  } while (true);
+    calcOperator = Console.ReadLine() ?? "";
+    if (calcOperator == "+" || calcOperator == "-" ||
+        calcOperator == "*" || calcOperator == "/")
+      return calcOperator;
+    Console.WriteLine($"\nInvalid operator: {calcOperator}. Try again:\n");
+  }
+}
+
+double  GetNumeralInput(int inputNum) {
+  string input;
+
+  while (true) {
+    Console.Write($"Num {inputNum}: ");
+    input = Console.ReadLine() ?? "";
+    if (double.TryParse(input, out double num)) {
+      return num;
+    }
+    Console.WriteLine($"Invalid input: {input}. Try again:\n");
+  }
+}
+
+double  Add(double num1, double num2) {
+  return num1 + num2;
+}
+
+double  Subtract(double num1, double num2) {
+  return num1 - num2;
+}
+
+double  Multiply(double num1, double num2) {
+  return num1 * num2;
+}
+
+double  Divide(double num1, double num2) {
+  return num1 / num2;
+}
+
+int Main() {
+  Console.WriteLine("Welcome to the Calculater!\nNote: Use . as the decimal separator for the numbers.\n");
+  double num1 = GetNumeralInput(1);
+  string calcOperator = GetOperator();
+  double num2 = GetNumeralInput(2);
 
   switch (calcOperator)
   {
     case "+":
-      Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+      Console.WriteLine($"{num1} + {num2} = {Add(num1, num2)}");
       break;
     case "-":
-      Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+      Console.WriteLine($"{num1} - {num2} = {Subtract(num1, num2)}");
       break;
     case "*":
-      Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+      Console.WriteLine($"{num1} * {num2} = {Multiply(num1, num2)}");
       break;
     case "/":
-      Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+      if (num2 == 0)
+        Console.WriteLine("Error: Cannot divide by 0");
+      else
+        Console.WriteLine($"{num1} / {num2} = {Divide(num1, num2)}");
       break;
   }
+  return 0;
 }
-catch (System.Exception e)
-{
-  Console.WriteLine($"Not good, something failed: {e.Message}");
-}
+Main();
+
+
+//////////////////////////////
+///
+/// This calculator has already taught you:
+///
+/// - Variables
+/// - Primitive types
+/// - Methods
+/// - Loops
+/// - Input validation
+/// - Switch statements
+/// - Basic program structure
+/// - Simple user experience considerations
