@@ -8,7 +8,7 @@ namespace TodoApp
         // Constructor - Also adding first todo for example purposes
         public TodoHandler(ITodoRepository repo)
         {
-            Console.WriteLine("TodoHandler initializing..");
+            ConsoleUI.PrintMessage("TodoHandler initializing..");
             _todoRepo = repo;
             _todoList = _todoRepo.LoadTodos();
 
@@ -32,13 +32,12 @@ namespace TodoApp
         {
             string input;
             string command;
-            Console.WriteLine("Enter to-do title, or [EXIT] to return to menu");
+            ConsoleUI.PrintMessage("Enter to-do title, or [EXIT] to return to menu");
             while (true)
             {
-                Console.Write("> ");
-                input = Console.ReadLine() ?? "";
+                input = ConsoleUI.GetInput();
                 if (string.IsNullOrEmpty(input)) {
-                    Console.WriteLine("Invalid input: Input cannot be empty");
+                    ConsoleUI.PrintMessage("Invalid input: Input cannot be empty");
                     continue;
                 }
                 command = input.ToUpper();
@@ -50,36 +49,36 @@ namespace TodoApp
             int newId = IncreaseTodoId();
             _todoList.Add(new Todo(newId, input, false));
             _todoRepo.SaveTodos(_todoList);
-            Console.WriteLine($"\n[ADDED] ID {newId}: {input} - Not completed");
+            ConsoleUI.PrintMessage($"\n[ADDED] ID {newId}: {input} - Not completed");
         }
 
         private void DeleteTodo(Todo todo)
         {
             _todoList.Remove(todo);
             _todoRepo.SaveTodos(_todoList);
-            Console.WriteLine($"\n[DELETED] ID {todo.Id}: {todo.Title}");
+            ConsoleUI.PrintMessage($"\n[DELETED] ID {todo.Id}: {todo.Title}");
         }
 
         private void CompleteTodo(Todo todo)
         {
             todo.MarkCompleted();
             _todoRepo.SaveTodos(_todoList);
-            Console.WriteLine($"\n[COMPLETED] ID {todo.Id}: {todo.Title}");
+            ConsoleUI.PrintMessage($"\n[COMPLETED] ID {todo.Id}: {todo.Title}");
         }
 
         private static void PrintTodo(Todo todo)
         {
             if (todo.IsCompleted)
-                Console.WriteLine($"ID {todo.Id}: {todo.Title} - Completed");
+                ConsoleUI.PrintMessage($"ID {todo.Id}: {todo.Title} - Completed");
             else
-                Console.WriteLine($"ID {todo.Id}: {todo.Title} - Not completed");
+                ConsoleUI.PrintMessage($"ID {todo.Id}: {todo.Title} - Not completed");
         }
 
         public void ListTodos(bool listAll)
         {
             if (_todoList.Count == 0)
             {
-                Console.WriteLine("\nThe to-do list is emtpy ..");
+                ConsoleUI.PrintMessage("\nThe to-do list is emtpy ..");
                 return;
             }
 
@@ -91,13 +90,12 @@ namespace TodoApp
             else
             {
                 string input;
-                Console.WriteLine("Enter [C] to list completed, [U] to list only uncompleted, [EXIT] to return to menu");
+                ConsoleUI.PrintMessage("Enter [C] to list completed, [U] to list only uncompleted, [EXIT] to return to menu");
                 while (true)
                 {
-                    Console.Write("> ");
-                    input = Console.ReadLine() ?? "";
+                    input = ConsoleUI.GetInput();
                     if (string.IsNullOrEmpty(input)) {
-                        Console.WriteLine("Invalid input: Input cannot be empty");
+                        ConsoleUI.PrintMessage("Invalid input: Input cannot be empty");
                         continue;
                     }
                     input = input.ToUpper();
@@ -105,7 +103,7 @@ namespace TodoApp
                         return;
                     else if (input == "C" || input == "U")
                         break;
-                    Console.WriteLine("Error: Invalid input");
+                    ConsoleUI.PrintMessage("Error: Invalid input");
                 }
                 for (int i = 0; i < _todoList.Count; i++)
                 {
@@ -121,7 +119,7 @@ namespace TodoApp
         {
             if (_todoList.Count == 0)
             {
-                Console.WriteLine("\nThe to-do list is emtpy ..");
+                ConsoleUI.PrintMessage("\nThe to-do list is emtpy ..");
                 return;
             }
 
@@ -137,11 +135,11 @@ namespace TodoApp
             int todoIndex;
             while (true)
             {
-                Console.WriteLine("Enter ID, [LISTALL] to show all to-dos, or [EXIT] to return to menu");
-                Console.Write("> ");
-                input = Console.ReadLine() ?? "";
+                ConsoleUI.PrintMessage("Enter ID, [LISTALL] to show all to-dos, or [EXIT] to return to menu");
+
+                input = ConsoleUI.GetInput();
                 if (string.IsNullOrEmpty(input)) {
-                    Console.WriteLine("Error: invalid input - Input cannot be empty");
+                    ConsoleUI.PrintMessage("Error: invalid input - Input cannot be empty");
                     continue;
                 }
                 else if (int.TryParse(input, out int id))
@@ -162,7 +160,7 @@ namespace TodoApp
                                 return;
                         }
                     }
-                    Console.WriteLine($"ERROR: Could not find ID {id}");
+                    ConsoleUI.PrintMessage($"ERROR: Could not find ID {id}");
                     continue;
                 }
                 input = input.ToUpper();
@@ -171,7 +169,7 @@ namespace TodoApp
                 else if (input == "EXIT")
                     return;
                 else
-                    Console.WriteLine("Error: Invalid input");
+                    ConsoleUI.PrintMessage("Error: Invalid input");
             }
         }
 
